@@ -9,7 +9,7 @@ import { Layout } from './components/Layout'
 import NotFound from './components/Layout/NotFound'
 import Preview from './components/Preview'
 import LayoutEdit from './components/Layout/LayoutEdit'
-import Homepage from './components/HomePage/Homepage'
+import Homepage from './components/Homepage/Homepage'
 import Meme from './components/Meme/Meme'
 
 function App() {
