@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import { createData } from '../../Service/api'
 import { useNavigate } from 'react-router-dom'
+import logo2 from '../../assets/logo2.png'
+
 
 const Header = () => {
   const navigate = useNavigate()
@@ -20,10 +22,11 @@ const Header = () => {
   }
   return (
     <NavBarContainer>
-      <span onClick={() => navigate('/')}>NAV BAR</span>
+      {/* <span onClick={() => navigate('/')}>NAV BAR</span> */}
+      <img src={logo2} alt="" />
       <a href="editor">Editor</a>
       <a href="meme">Meme</a>
-      {/* <button onClick={handleSaveSourceCode}>PUBLISH</button> */}
+      <button onClick={handleSaveSourceCode}>PUBLISH</button>
     </NavBarContainer>
   )
 }
@@ -37,4 +40,7 @@ const NavBarContainer = styled.div`
   display:flex;
   justify-content: space-between;
   // padding: 0 10px;
+  & > img{
+    width: 5%;
+  }
 `
