@@ -1,7 +1,9 @@
 import styled from '@emotion/styled'
 import { createData } from '../../Service/api'
 import { useNavigate } from 'react-router-dom'
-import logo2 from '../../assets/logo2.png'
+import twinkle1 from '../../assets/twinkle1.png'
+import { HomeFilled, BulbFilled, HighlightFilled } from '@ant-design/icons'
+import { NavLink } from 'react-router-dom'
 
 
 const Header = () => {
@@ -21,13 +23,22 @@ const Header = () => {
     }
   }
   return (
-    <NavBarContainer>
-      {/* <span onClick={() => navigate('/')}>NAV BAR</span> */}
-      <img src={logo2} alt="" />
-      <a href="editor">Editor</a>
-      <a href="meme">Meme</a>
-      <button onClick={handleSaveSourceCode}>PUBLISH</button>
-    </NavBarContainer>
+    // <NavBarContainer>
+    //   {/* <span onClick={() => navigate('/')}>NAV BAR</span> */}
+    //   <img src={twinkle1} alt="" />
+    //   <a href="editor">Editor</a>
+    //   <a href="meme">Meme</a>
+    //   <button onClick={handleSaveSourceCode}>PUBLISH</button>
+    // </NavBarContainer>
+    <div className='header'>
+      <NavLink to={'/'} className='header-logo'><img className='header-logo-img' src={twinkle1} alt="" /></NavLink>
+      <div className='header-listBtn'>
+        <NavLink to={'/'} className='header-a'><HomeFilled />  Trang chủ</NavLink>
+        <NavLink to={'/editor'} className='header-a'><BulbFilled />Dựng Web</NavLink>
+        <NavLink to={'/meme'} className='header-a'><HighlightFilled />Chế ảnh</NavLink>
+      </div>
+      <div className='login-btn'>Đăng nhập</div>
+    </div>
   )
 }
 
@@ -39,8 +50,5 @@ const NavBarContainer = styled.div`
   width: 100%;
   display:flex;
   justify-content: space-between;
-  // padding: 0 10px;
-  & > img{
-    width: 5%;
-  }
+  
 `
