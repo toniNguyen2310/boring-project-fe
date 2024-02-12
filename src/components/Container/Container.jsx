@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-
+import '../../App.scss'
 const Container = (props) => {
   const { currentDrag } =props
 
@@ -10,7 +10,7 @@ const Container = (props) => {
   }
   return (
     <ContainerPreview id='container' onDragOver={(e) => handleDragOver(e)} >
-      {/* <a href="" >button</a> */}
+      <a className='btn btn-primary' href="" >button</a>
       {/* <img src="https://st2.depositphotos.com/1561359/12101/v/950/depositphotos_121012076-stock-illustration-blank-photo-icon.jpg" alt="" /> */}
     </ContainerPreview>
   )

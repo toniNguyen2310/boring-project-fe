@@ -14,6 +14,29 @@
   }
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.224);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.398);
+}
+
 
 /* body {
   margin: 0;
@@ -125,4 +148,19 @@ img{
     color: #ffffff;
   }
   
+}
+
+
+#inputTextDragging{
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  border: 4px dashed  red;
+  top:50%;
+  left: 0;
+  cursor: pointer;
+}
+
+.isDragging{
+  cursor: pointer;
 }

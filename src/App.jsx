@@ -1,5 +1,4 @@
 import { useRef } from 'react'
-import './App.scss'
 import styled from '@emotion/styled'
 import Header from './components/Header/Header'
 import SideBar from './components/SideBar/SideBar'
