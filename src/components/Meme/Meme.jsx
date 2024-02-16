@@ -7,14 +7,16 @@ const Meme = () => {
   const cloneTextDrag = useRef(null)
   //On mouse Down when click inside image to get distance mouse to div cover image
   const divMouseDown =(e) => {
-    let rect = document.getElementById('divCover').getBoundingClientRect()
+    let rect = document.getElementById('inputText').getBoundingClientRect()
+    //Khoảng cách từ chuột tới màn hình window
     let mouseXtoWindow = e.clientX
     let mouseYtoWindow = e.clientY
+    //Khoảng cách từ Div id 'inputText' tới màn hình window
     let distanceFromLeft = rect.left
     let distanceFromTop = rect.top
     // console.log(e.target)
-    console.log('Khoảng cách từ chuột tới div cover ảnh LEFT>>> ', Number(mouseXtoWindow) - Number(distanceFromLeft) )
-    console.log('Khoảng cách từ chuột tới div cover ảnh TOP >>> ', Number(mouseYtoWindow) - Number(distanceFromTop) )
+    // console.log('Khoảng cách từ chuột tới div cover ảnh LEFT>>> ', Number(mouseXtoWindow) - Number(distanceFromLeft) )
+    // console.log('Khoảng cách từ chuột tới div cover ảnh TOP >>> ', Number(distanceFromTop), distanceFromLeft )
     if (e.target.id === 'inputText') {
       distanceXFirst.current = Number(mouseXtoWindow) - Number(distanceFromLeft)
       distanceYFirst.current = Number(mouseYtoWindow) - Number(distanceFromTop)
@@ -36,7 +38,7 @@ const Meme = () => {
   }
 
   //on drag over
-  const dragTestOver = (e) => {
+  const dragTextOver = (e) => {
     cloneTextDrag.current.style.opacity ='1'
     let rect = document.getElementById('divCover').getBoundingClientRect()
     let distanceFromLeft = rect.left
@@ -46,8 +48,8 @@ const Meme = () => {
     distanceY.current = Number(e.pageY - distanceFromTop - distanceYFirst.current )
     cloneTextDrag.current.style.left = distanceX.current + 'px'
     cloneTextDrag.current.style.top = distanceY.current + 'px'
-
   }
+
 
   //on Drag end
   const dragTextEnd = (e) => {
@@ -64,21 +66,13 @@ const Meme = () => {
   }
 
 
-  useEffect(() => {
-    var img = document.getElementById('imageMeme')
-    //or however you get a handle to the IMG
-    var width = img.clientWidth
-    var height = img.clientHeight
-    console.log(width, height)
-  }, [])
-
   return (
     <MemeContainer >
       <SidebarMeme>
         <button>Thêm chữ</button>
       </SidebarMeme>
       <MainMeme >
-        <ImageCover onMouseDown={(e) => divMouseDown(e)} id='divCover' onDragOver={(e) => dragTestOver(e)}>
+        <ImageCover id='divCover' onMouseDown={(e) => divMouseDown(e)} onDragOver={(e) => dragTextOver(e)}>
           <img id='imageMeme' src="https://i.pinimg.com/564x/fd/be/85/fdbe856132156f9ddd2489145a96e103.jpg" alt="" />
           <InputText onDragStart={(e) => dragTextStart(e)} onDragEnd={(e) => dragTextEnd(e)} draggable id='inputText'></InputText>
           {/* <div id='inputTextDragging'></div> */}
@@ -128,11 +122,13 @@ const MainMeme = styled.div`
   z-index: 0;
 `
 const ImageCover = styled.div`
-
+  background: blue;
   border: 2px solid #333;
   margin-top: 30px;
   padding: 20px;
   border-radius: 20px;
   position: relative;
-  z-index: -1;
+  // z-index: -1;
+  min-width: 600px;
+  min-height: 600px;
 `
