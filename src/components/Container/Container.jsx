@@ -10,7 +10,7 @@ const Container = (props) => {
   }
   return (
     <ContainerPreview id='container' onDragOver={(e) => handleDragOver(e)} >
-      <a className='btn btn-primary' href="" >button</a>
+      <button >button</button>
       {/* <img src="https://st2.depositphotos.com/1561359/12101/v/950/depositphotos_121012076-stock-illustration-blank-photo-icon.jpg" alt="" /> */}
     </ContainerPreview>
   )

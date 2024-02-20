@@ -30,13 +30,14 @@
     gap: 10px;
   }
   li{
-    background-color: red;
+    background-color: #B8D3F2;
     width: 100px;
     height: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
   }
   
    #container{
@@ -60,6 +61,14 @@
   }
   .btn-primary{
     background-color: #077cfe;
+    color: #ffffff;
+  }
+  button{
+    padding: 5px 10px;
+    background-color: #077cfe;
+    width: fit-content;
+    border-radius: 10px;
+    border: none;
     color: #ffffff;
   }
 

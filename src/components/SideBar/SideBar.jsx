@@ -16,16 +16,23 @@ const SideBar = (props) => {
 
   const handleDragEnd =(e) => {
     if (currentDrag.current === 'container') {
-      const newElement = document.createElement('a')
-      if (e.target.getAttribute('datatype') === 'html/button') {
-        // and give it some content
-        const newContent = document.createTextNode('button')
-        newElement.classList.add('btn')
-        newElement.classList.add('btn-primary')
-        // add the text node to the newly created div
-        newElement.appendChild(newContent)
+      let target = e.target.innerHTML
+      const newElement = document.createElement(target)
+      const newContent = document.createTextNode(`create ${target} success`)
+      newElement.appendChild(newContent)
 
-      }
+      // if (target === 'html/button') {
+      //   const newElement = document.createElement('a')
+      //   // and give it some content
+      //   const newContent = document.createTextNode('button')
+      //   newElement.classList.add('btn')
+      //   newElement.classList.add('btn-primary')
+      //   // add the text node to the newly created div
+      //   newElement.appendChild(newContent)
+      //   // add the newly created element and its content into the DOM
+      //   const currentContainer = document.getElementById(`${currentDrag.current}`)
+      //   currentContainer.appendChild(newElement)
+      // }else if(target = '')
       // const newElement = document.createElement(`${e.target.nodeName}`)
 
 
@@ -42,10 +49,9 @@ const SideBar = (props) => {
       //   // add the text node to the newly created div
       //   newElement.appendChild(newContent)
       // }
-
-      // add the newly created element and its content into the DOM
       const currentContainer = document.getElementById(`${currentDrag.current}`)
       currentContainer.appendChild(newElement)
+
     }
 
     currentDrag.current = null
@@ -61,7 +67,12 @@ const SideBar = (props) => {
         <img onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable src="https://st2.depositphotos.com/1561359/12101/v/950/depositphotos_121012076-stock-illustration-blank-photo-icon.jpg" alt="" /> */}
         <ul>
           <li datatype='html/button' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>button</li>
-          <li datatype='html/img' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>image</li>
+          <li datatype='html/h1' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>h1</li>
+          <li datatype='html/h2' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>h2</li>
+          <li datatype='html/h3' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>h3</li>
+          <li datatype='html/h4' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>h4</li>
+          <li datatype='html/p' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>p</li>
+          {/* <li datatype='html/img' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>image</li> */}
         </ul>
       </SideBarContainer>
 

@@ -37,7 +37,7 @@ const Header = () => {
         <NavLink to={'/editor'} className='header-a'><BulbFilled />Dựng Web</NavLink>
         <NavLink to={'/meme'} className='header-a'><HighlightFilled />Chế ảnh</NavLink>
       </div>
-      <div className='login-btn'>Đăng nhập</div>
+      <div className='login-btn' onClick={handleSaveSourceCode}>PUBLIC</div>
     </div>
   )
 }
