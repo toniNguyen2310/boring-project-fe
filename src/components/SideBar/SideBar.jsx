@@ -1,5 +1,8 @@
 import styled from '@emotion/styled'
 import { useEffect, useState } from 'react'
+import { Basic } from '../../Utils/constant'
+import { Bs0Circle } from 'react-icons/bs'
+
 
 const SideBar = (props) => {
   const { currentDrag } =props
@@ -62,18 +65,14 @@ const SideBar = (props) => {
   return (
     <>
       <SideBarContainer>
-        {/* <a href="" onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>button</a>
-        <p onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>This is p</p>
-        <img onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable src="https://st2.depositphotos.com/1561359/12101/v/950/depositphotos_121012076-stock-illustration-blank-photo-icon.jpg" alt="" /> */}
-        <ul>
-          <li datatype='html/button' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>button</li>
-          <li datatype='html/h1' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>h1</li>
-          <li datatype='html/h2' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>h2</li>
-          <li datatype='html/h3' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>h3</li>
-          <li datatype='html/h4' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>h4</li>
-          <li datatype='html/p' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>p</li>
-          {/* <li datatype='html/img' onDragStart={(e) => handleDragStart(e)} onDragEnd={(e) => handleDragEnd(e)} draggable>image</li> */}
-        </ul>
+        <ElementCover>
+          <div>BASIC</div>
+          <div>
+            <div>Heading</div>
+            <div>Paragraph</div>
+            <div>Button</div>
+          </div>
+        </ElementCover>
       </SideBarContainer>
 
     </>
@@ -84,13 +83,14 @@ export default SideBar
 
 const SideBarContainer = styled.div`
   background: #ffffff;
-  // height: 100%;
   width: 20%;
   display:flex;
   // justify-content: space-between;
   flex-direction: column;
-  padding: 5px;
+  padding: 0 5px;
   gap: 10px;
-  
-  
+`
+
+const ElementCover =styled.div`
+
 `

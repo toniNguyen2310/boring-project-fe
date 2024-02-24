@@ -122,7 +122,7 @@ const MainMeme = styled.div`
   z-index: 0;
 `
 const ImageCover = styled.div`
-  background: blue;
+  // background: blue;
   border: 2px solid #333;
   margin-top: 30px;
   padding: 20px;
